@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>JS Assignment 3</title>
+    <style>
+      h3 {
+        display: inline-block;
+        padding: 10px 5px;
+        margin: 10px;
+        border-bottom: 1px solid gray;
+      }
+    </style>
+  </header>
+  <body>
+    <h3>Total People Names</h3>
+    <ul id="total-people"></ul>
+    <h3>
+      People Name(s) starting with
+      <span style="color: red" id="people-name-starting"></span>
+    </h3>
+    <ul id="people-list"></ul>
+    <script>
+      const start_name = "B";
+      const people = [
+        "Alice Anderson",
+        "Aaron Adams",
+        "Bella Brown",
+        "Brian Black",
+        "Cathy Carter",
+        "Charles Cooper",
+        "Diana Davis",
+        "Daniel Drake",
+        "Ella Evans",
+        "Ethan Edwards",
+        "Fiona Fisher",
+        "Frank Foster",
+        "Grace Green",
+        "Gavin Gray",
+        "Hannah Harris",
+        "Henry Hill",
+        "Isabella Ingram",
+        "Ian Irving",
+        "Jack Johnson",
+        "Julia James",
+      ];
+      people.forEach((i) => {
+        document.querySelector("#total-people").innerHTML += `<li>${i}</li>`;
+      });
+      document.querySelector("#people-name-starting").innerHTML = start_name;
+      const newArr = people.filter((p) => p.charAt(0) == start_name);
+      console.log(newArr);
+      newArr.forEach((i) => {
+        document.querySelector("#people-list").innerHTML += `<li>${i}</li>`;
+      });
+    </script>
+  </body>
+</html>
