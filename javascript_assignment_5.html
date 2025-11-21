@@ -41,7 +41,7 @@
           return score >= cond.start && score <= cond.end;
         });
         if (resultGrade.length == 0) {
-          document.querySelector("#gradeResult").innerHTML = "F";
+          document.querySelector("#gradeResult").innerHTML = "N/A";
         } else {
           document.querySelector("#gradeResult").innerHTML =
             resultGrade[0].grade;
