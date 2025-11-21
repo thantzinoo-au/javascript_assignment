@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Hello JS JS JS</title>
+  </header>
+  <body>
+    <ul id="list1"></ul>
+    <script>
+      for (let i = 0; i < 20; i++) {
+        if (i % 5 != 0) {
+          document.querySelector("#list1").innerHTML += `<li>${i}</li>`;
+        }
+      }
+    </script>
+  </body>
+</html>
