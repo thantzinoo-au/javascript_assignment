@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <h3>Today Fruits</h3>
+
+    <ul id="fruit-list"></ul>
+
+    <hr />
+
+    <h3>Today Vegetables</h3>
+
+    <ul id="veg-list"></ul>
+
+    <script>
+      const fruit_list = ["Apple", "Banana", "Orange", "Mango", "Strawberry"];
+      const vegetable_list = [
+        "Carrot",
+        "Broccoli",
+        "Spinach",
+        "Tomato",
+        "Cucumber",
+      ];
+      for (let fruit of fruit_list) {
+        document.querySelector("#fruit-list").innerHTML += `<li>${fruit}</li>`;
+      }
+      vegetable_list.forEach(
+        (veg) =>
+          (document.querySelector("#veg-list").innerHTML += `<li>${veg}</li>`)
+      );
+    </script>
+  </body>
+</html>
