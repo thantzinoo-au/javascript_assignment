@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Add New Item</title>
+  </head>
+
+  <body>
+    <form
+      action="https://athiphat-mybackend-01.southeastasia.cloudapp.azure.com/api/product"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <fieldset>
+        <legend>General Info</legend>
+
+        <p>
+          <label for="itemName">Item Name</label>
+
+          <input
+            type="text"
+            id="itemName"
+            name="itemName"
+            size="50"
+            maxlength="500"
+          />
+        </p>
+        <p>
+          <label for="itemDescription">Item Description</label>
+
+          <textarea
+            type="text"
+            id="itemDescription"
+            name="itemDescription"
+            value=""
+          >
+          </textarea>
+        </p>
+        <p>
+          <label for="coverImage">Cover Image</label>
+
+          <input type="file" id="coverImage" name="coverImage" />
+        </p>
+        <p>
+          <label for="category">Category</label>
+
+          <select name="category" id="category">
+            <option value="notSpecified">notSpecified</option>
+            <option value="consumption">consumption</option>
+            <option value="household">household</option>
+            <option value="electronic">electronic</option>
+            <option value="gadget">gadget</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Misc.</legend>
+        <p>
+          <label for="inventoryAmount">inventoryAmount</label>
+
+          <input type="number" id="inventoryAmount" name="inventoryAmount" />
+        </p>
+        <p>
+          <label for="listPrice">listPrice</label>
+
+          <input type="number" id="listPrice" name="listPrice" />
+        </p>
+        <p>
+          <label for="availableStore[]">Available Stores</label>
+
+          <input type="checkbox" value="Bangkok" name="availableStore[]" />
+          Bangkok
+          <input type="checkbox" value="Pattaya" name="availableStore[]" />
+          Pattaya
+          <input type="checkbox" value="Phuket" name="availableStore[]" />
+          Phuket
+        </p>
+        <p>
+          <label for="status">Active Status</label>
+
+          <input type="radio" name="status" />
+          Active
+          <input type="radio" name="status" />
+          Inactive
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Staff</legend>
+        <label for="email">Staff Email</label>
+
+        <input type="email" id="email" name="email" />
+      </fieldset>
+
+      <button type="submit">Submit Form</button>
+    </form>
+  </body>
+</html>
