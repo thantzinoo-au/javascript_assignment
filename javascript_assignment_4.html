@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Monster Detail</title>
+  </head>
+
+  <body>
+    <!-- You can modify the HTML to apply change event or add more elements -->
+
+    <h3>Monster Detail</h3>
+
+    <div>Select Monster:</div>
+
+    <div>
+      <select id="monster-list" onchange="onSelectorChange(event)"></select>
+    </div>
+
+    <hr />
+
+    <div>
+      <table>
+        <tr>
+          <th>ID</th>
+
+          <td id="td-monster-id"></td>
+        </tr>
+
+        <tr>
+          <th>Name</th>
+
+          <td id="td-monster-name"></td>
+        </tr>
+
+        <tr>
+          <th>HP</th>
+
+          <td id="td-monster-hp"></td>
+        </tr>
+
+        <tr>
+          <th>EXP</th>
+
+          <td id="td-monster-exp"></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      // Monster list as array of JSON objects
+
+      const monsters = [
+        {
+          id: 1,
+
+          name: "Fire Dragon",
+
+          hp: 150,
+
+          exp: 85,
+        },
+
+        {
+          id: 2,
+
+          name: "Ice Wolf",
+
+          hp: 75,
+
+          exp: 45,
+        },
+
+        {
+          id: 3,
+
+          name: "Shadow Goblin",
+
+          hp: 40,
+
+          exp: 25,
+        },
+
+        {
+          id: 4,
+
+          name: "Lightning Phoenix",
+
+          hp: 200,
+
+          exp: 120,
+        },
+
+        {
+          id: 5,
+
+          name: "Earth Golem",
+
+          hp: 180,
+
+          exp: 95,
+        },
+
+        {
+          id: 6,
+
+          name: "Poison Spider",
+
+          hp: 60,
+
+          exp: 35,
+        },
+        {
+          id: 7,
+
+          name: "Wind Eagle",
+
+          hp: 90,
+
+          exp: 55,
+        },
+
+        {
+          id: 8,
+
+          name: "Dark Skeleton",
+
+          hp: 65,
+
+          exp: 40,
+        },
+
+        {
+          id: 9,
+
+          name: "Crystal Unicorn",
+
+          hp: 120,
+
+          exp: 75,
+        },
+
+        {
+          id: 10,
+
+          name: "Lava Titan",
+
+          hp: 250,
+
+          exp: 150,
+        },
+      ];
+
+      const onSelectorChange = function (event) {
+        const selected_value = event.target.value;
+        if (selected_value != "-") {
+          const filtered_monster = monsters.filter(
+            (m) => m.name == selected_value
+          )[0];
+          document.getElementById("td-monster-id").innerHTML =
+            filtered_monster.id;
+          document.getElementById("td-monster-name").innerHTML =
+            filtered_monster.name;
+          document.getElementById("td-monster-hp").innerHTML =
+            filtered_monster.hp;
+          document.getElementById("td-monster-exp").innerHTML =
+            filtered_monster.exp;
+        } else {
+          document.getElementById("td-monster-id").innerHTML = "";
+          document.getElementById("td-monster-name").innerHTML = "";
+          document.getElementById("td-monster-hp").innerHTML = "";
+          document.getElementById("td-monster-exp").innerHTML = "";
+        }
+      };
+      window.addEventListener("load", function () {
+        const monster_list_element = document.getElementById("monster-list");
+        let default_option = document.createElement("option");
+        default_option.value = "-";
+        default_option.innerHTML = "-";
+        default_option.selected = true;
+        monster_list_element.appendChild(default_option);
+
+        monsters.map((monster) => {
+          let new_li_elem = document.createElement("option");
+          new_li_elem.value = monster.name;
+          new_li_elem.innerHTML = monster.name;
+          monster_list_element.appendChild(new_li_elem);
+        });
+      });
+    </script>
+  </body>
+</html>
